@@ -19,15 +19,3 @@ if __name__ == "__main__":
     data = response.json()
 
     print("Predicted keyword: {}".format(data["keyword"]))
-
-
-
-
-
-
-
-
-
-
-
-
