@@ -1,9 +1,11 @@
-import random
 import os
-from flask import Flask, request, jsonify
-from keyword_spotting_service import Keyword_Spotting_Service
+import random
+
+from flask import Flask, jsonify, request
+from keyword_spotting_service import keyword_spotting_service
 
 app = Flask(__name__)
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -14,7 +16,7 @@ def predict():
     audio_file.save(file_name)
 
     # invoke keyword spotting service
-    kss = Keyword_Spotting_Service()
+    kss = keyword_spotting_service()
 
     # make a prediction
     predicted_keyword = kss.predict(file_name)
@@ -29,16 +31,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=False)
-
-
-
-
-
-
-
-
-
-
-
-
-

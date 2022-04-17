@@ -1,7 +1,7 @@
 import requests
 
 # server url
-URL = "http://127.0.0.1:5000/predict"
+URL = "http://127.0.0.1:5050/predict"
 
 
 # audio file we'd like to send for predicting keyword
@@ -19,15 +19,3 @@ if __name__ == "__main__":
     data = response.json()
 
     print("Predicted keyword: {}".format(data["keyword"]))
-
-
-
-
-
-
-
-
-
-
-
-
